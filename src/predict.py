@@ -41,7 +41,7 @@ def generate_predictions(model_path: str | Path | None = None):
         "load_id": val_df["load_id"],
         "predicted_rate": val_preds.round(2)
     })
-    output_pred_path = BASE_DIR / "validation-predictions.csv"
+    output_pred_path = BASE_DIR / "validation_predictions.csv"
     sub_df.to_csv(output_pred_path, index=False)
     print(f"Saved {output_pred_path} successfully ({len(sub_df):,} rows).")
 
