@@ -34,11 +34,11 @@
 *(Show `src/features.py` and `src/train.py`)*
 > *"I engineered temporal cyclical features (sin/cos of day of year and day of week) and market interaction features like `market_index * distance` and `quote_signal * distance`.*
 > *I chose **LightGBM Regressor** with **5-Fold Cross-Validation (`KFold`)** to evaluate out-of-fold generalization without leakage.*
-> *The model achieved outstanding validation performance:*
-> - *R² Score: **0.9976***
-> - *Out-of-Fold MAE: **$51.17***
-> - *Mean Absolute Percentage Error (MAPE): **2.50%***
-> - *RMSE: **$69.78**"*
+> *The model achieved strong validation performance across 5 folds:*
+> - *R² Score: **0.8378***
+> - *Out-of-Fold MAE: **$104.09***
+> - *Mean Absolute Percentage Error (MAPE): **5.09%***
+> - *RMSE: **$564.47**"*
 
 ### 1:45 – 2:30 | Code Walkthrough & Scorer Verification
 *(Show Terminal running `score.py`, then open `scorer_results/candidate_december.png`)*
@@ -59,8 +59,8 @@
 ## 🔢 Key Numbers Cheat-Sheet to Mention
 - **12,000**: Validation predictions generated (`TE-000001` to `TE-012000`)
 - **31**: December daily predictions for Lexington $\to$ Fort Wayne
-- **0.9976**: Out-of-fold $R^2$ Score
-- **$51.17**: Out-of-fold MAE
-- **2.50%**: Mean Absolute Percentage Error (MAPE)
-- **$69.78**: Out-of-fold RMSE
+- **0.8378**: Out-of-fold $R^2$ Score
+- **$104.09**: Out-of-fold MAE
+- **5.09%**: Mean Absolute Percentage Error (MAPE)
+- **$564.47**: Out-of-fold RMSE
 - **$711.84**: Average December predicted rate (~$1.97/mile)
