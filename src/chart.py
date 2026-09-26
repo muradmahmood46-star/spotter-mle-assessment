@@ -2,7 +2,12 @@
 December 2025 Prediction Visualization.
 """
 from __future__ import annotations
+import sys
 from pathlib import Path
+
+# Add project root to sys.path for direct execution
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt

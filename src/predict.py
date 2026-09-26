@@ -2,8 +2,13 @@
 Prediction pipeline to generate validation-predictions.csv and populate december-chart-inputs.csv.
 """
 from __future__ import annotations
+import sys
 import pickle
 from pathlib import Path
+
+# Add project root to sys.path for direct execution
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import numpy as np
 import pandas as pd
 

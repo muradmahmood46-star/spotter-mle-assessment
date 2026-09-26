@@ -2,8 +2,13 @@
 Model training pipeline with LightGBM, log1p target transformation, and 5-fold Cross-Validation.
 """
 from __future__ import annotations
+import sys
 import pickle
 from pathlib import Path
+
+# Add project root to sys.path for direct execution
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import KFold
