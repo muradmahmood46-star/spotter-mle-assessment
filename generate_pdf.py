@@ -68,10 +68,10 @@ def build_pdf_report():
     pdf.set_font("Helvetica", "", 8.5)
     pdf.set_text_color(30, 30, 30)
     metrics_data = [
-        ("R2 Score", "0.9976", "Captures 99.76% of freight rate variance across all lanes"),
-        ("MAE", "$51.17", "Average absolute error per load across holdout sets"),
-        ("MAPE", "2.50%", "Mean absolute percentage error (< 3% across diverse haul lengths)"),
-        ("RMSE", "$69.78", "Root mean squared error penalizing large variance deviations"),
+        ("R2 Score", "0.8378", "Captures 83.78% of freight rate variance across all lanes"),
+        ("MAE", "$104.09", "Average absolute error per load across holdout sets"),
+        ("MAPE", "5.09%", "Mean absolute percentage error across diverse haul lengths"),
+        ("RMSE", "$564.47", "Root mean squared error across out-of-fold evaluations"),
         ("Validation Count", "12,000 loads", "Fully predicted and verified in validation_predictions.csv"),
     ]
     for row in metrics_data:
@@ -97,12 +97,12 @@ def build_pdf_report():
     pdf.cell(38, 5.5, "Status", 1, 1, "C", True)
 
     folds = [
-        ("Fold 1", "1,653", "$73.19", "$52.61", "Passed"),
-        ("Fold 2", "1,652", "$69.45", "$50.84", "Passed"),
-        ("Fold 3", "1,652", "$70.36", "$51.52", "Passed"),
-        ("Fold 4", "1,652", "$68.48", "$51.53", "Passed"),
-        ("Fold 5", "1,652", "$67.24", "$49.33", "Passed"),
-        ("Overall OOF", "8,261", "$69.78", "$51.17", "R2 = 0.9976"),
+        ("Fold 1", "1,652", "$536.89", "$102.62", "Passed"),
+        ("Fold 2", "1,652", "$487.35", "$95.83", "Passed"),
+        ("Fold 3", "1,652", "$612.05", "$104.21", "Passed"),
+        ("Fold 4", "1,652", "$677.88", "$110.88", "Passed"),
+        ("Fold 5", "1,652", "$482.98", "$106.90", "Passed"),
+        ("Overall OOF", "8,260", "$564.47", "$104.09", "R2 = 0.8378"),
     ]
     pdf.set_font("Helvetica", "", 8.5)
     for f in folds:

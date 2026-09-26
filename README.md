@@ -69,15 +69,15 @@ Implemented in `src/features.py`:
 
 | Fold | RMSE ($) | MAE ($) |
 | :---: | :---: | :---: |
-| Fold 1 | \$73.19 | \$52.61 |
-| Fold 2 | \$69.45 | \$50.84 |
-| Fold 3 | \$70.36 | \$51.52 |
-| Fold 4 | \$68.48 | \$51.53 |
-| Fold 5 | \$67.24 | \$49.33 |
-| **Overall OOF** | **\$69.78** | **\$51.17** |
+| Fold 1 | \$536.89 | \$102.62 |
+| Fold 2 | \$487.35 | \$95.83 |
+| Fold 3 | \$612.05 | \$104.21 |
+| Fold 4 | \$677.88 | \$110.88 |
+| Fold 5 | \$482.98 | \$106.90 |
+| **Overall OOF** | **\$564.47** | **\$104.09** |
 
-- **$R^2$ Score**: **0.9976**
-- **MAPE**: **2.50%**
+- **$R^2$ Score**: **0.8378**
+- **MAPE**: **5.09%**
 
 ---
 
@@ -90,7 +90,6 @@ Implemented in `src/features.py`:
 ├── requirements.txt
 ├── score.py                                  # Official assessment scorer
 ├── validation_predictions.csv                # 12,000 final predictions
-├── validation-predictions.csv                # Alias file for validation predictions
 ├── december-chart-inputs.csv                 # 31 predicted daily December loads
 ├── scorer_results/
 │   └── candidate_december.png                # Generated scorer chart
