@@ -68,9 +68,10 @@ def plot_december_chart(input_csv: str | Path | None = None, output_png: str | P
     )
 
     fig.tight_layout(rect=(0, 0.1, 1, 1))
-    fig.savefig(output_png, bbox_inches="tight")
+    output_str = str(output_png.resolve())
+    fig.savefig(output_str, bbox_inches="tight")
     plt.close(fig)
-    print(f"Chart saved to {output_png}")
+    print(f"Chart saved to {output_str}")
 
 
 if __name__ == "__main__":
