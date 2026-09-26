@@ -45,14 +45,14 @@ def build_pdf_report():
     # 1. Executive Summary
     pdf.set_font("Helvetica", "B", 12)
     pdf.set_text_color(6, 74, 86)
-    pdf.cell(0, 7, "1. Executive Summary & Key Results", new_x="LMARGIN", new_y="NEXT")
+    pdf.cell(0, 7, "1. Executive Summary: Strong Generalization with Realistic Error Bounds", new_x="LMARGIN", new_y="NEXT")
     
     pdf.set_font("Helvetica", "", 9)
     pdf.set_text_color(40, 40, 40)
     pdf.multi_cell(0, 4.5, 
         "This report outlines the end-to-end Machine Learning pipeline developed to predict US spot freight rates (posted_rate). "
-        "Using LightGBM with log1p target transformation and 5-Fold Cross-Validation, the model delivers exceptional accuracy "
-        "and strong out-of-fold generalization with zero data leakage. All 12,000 validation loads and 31 benchmark December predictions "
+        "Using LightGBM with log1p target transformation and 5-Fold Cross-Validation, the model delivers strong generalization "
+        "with realistic error bounds and zero data leakage. All 12,000 validation loads and 31 benchmark December predictions "
         "pass the official score.py validation checks with 0 errors."
     )
     pdf.ln(2)
@@ -168,9 +168,9 @@ def build_pdf_report():
     pdf.cell(0, 4.5, "Predicted Rate Stats: Min: $710.87 | Max: $713.08 | Mean: $711.84 (~$1.97/mile) | Std: 0.6699", new_x="LMARGIN", new_y="NEXT")
     pdf.ln(2)
 
-    chart_file = Path("scorer_results/candidate_december.png")
+    chart_file = Path(__file__).resolve().parent / "scorer_results" / "candidate_december.png"
     if chart_file.exists():
-        pdf.image(str(chart_file.resolve()), w=190)
+        pdf.image(str(chart_file).replace("\\", "/"), w=190)
     pdf.ln(3)
 
     # 6. Official Scorer Verification Output
