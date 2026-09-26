@@ -191,9 +191,9 @@ def build_pdf_report():
     )
     pdf.multi_cell(0, 4.5, scorer_text, border=1, fill=True)
 
-    output_path = "REPORT.pdf"
-    pdf.output(output_path)
-    print(f"Successfully generated updated {output_path} ({Path(output_path).stat().st_size:,} bytes)")
+    output_path = Path(__file__).resolve().parent / "REPORT.pdf"
+    pdf.output(str(output_path))
+    print(f"Successfully generated updated {output_path} ({output_path.stat().st_size:,} bytes)")
 
 
 if __name__ == "__main__":

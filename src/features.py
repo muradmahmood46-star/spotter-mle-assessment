@@ -136,4 +136,4 @@ class FeaturePipeline:
             "equipment_cat", "pickup_cat", "delivery_cat", "lane_cat"
         ]
 
-        return data[feature_cols]
+        return data[feature_cols].fillna(0)

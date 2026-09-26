@@ -17,6 +17,8 @@ from src.features import FeaturePipeline
 def train_model():
     print("Loading training data...")
     train_df = load_train_data()
+    # Filter out missing target row if present
+    train_df = train_df.dropna(subset=["posted_rate"]).reset_index(drop=True)
 
     pipeline = FeaturePipeline()
     pipeline.fit(train_df)
